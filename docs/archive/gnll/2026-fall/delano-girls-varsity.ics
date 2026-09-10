@@ -1,0 +1,162 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Delano GNLL//SportsEngine Tourney Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Delano Girls Varsity
+X-WR-TIMEZONE:America/Chicago
+X-PUBLISHED-TTL:PT1H
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+BEGIN:VEVENT
+UID:h20260819201338900e81b6522f02f44@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260913T103000
+DTEND;TZID=America/Chicago:20260913T112000
+SUMMARY:Delano Girls Varsity vs Elk River
+LOCATION:Maple Grove Fernbrook Fields - Turf 1S
+DESCRIPTION:Game P131\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
+ team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
+ blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
+ vision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b06746
+ 32334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h20260819201432662fcac985be57b49@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260913T130000
+DTEND;TZID=America/Chicago:20260913T135000
+SUMMARY:Delano Girls Varsity vs Mounds View HS White
+LOCATION:Maple Grove Fernbrook Fields - Turf 1N
+DESCRIPTION:Game P133\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
+ team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
+ blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
+ vision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b06746
+ 32334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h202608191852403342958ccd5a92547@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260920T130000
+DTEND;TZID=America/Chicago:20260920T135000
+SUMMARY:Delano Girls Varsity vs Stillwater Red Stillwater Black
+LOCATION:St. Paul Central High School - Small Turf East
+DESCRIPTION:Game P5\n2026 GNLL Boys & Girls Sunday Fall League\nSource te
+ am: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Publ
+ ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
+ sion=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b0674632
+ 334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h2026081918524326992eed6b35fe840@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260920T135000
+DTEND;TZID=America/Chicago:20260920T144000
+SUMMARY:Delano Girls Varsity vs Hudson Varsity
+LOCATION:St. Paul Central High School - Small Turf East
+DESCRIPTION:Game P56\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
+ eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
+ lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
+ ision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b067463
+ 2334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h20260819201338900c17585defb8d4b@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260927T140000
+DTEND;TZID=America/Chicago:20260927T145000
+SUMMARY:Delano Girls Varsity vs Maple Grove Varsity
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+DESCRIPTION:Game P130\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
+ team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
+ blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
+ vision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b06746
+ 32334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h20260819201546005f1c110df105e44@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20260927T154000
+DTEND;TZID=America/Chicago:20260927T163000
+SUMMARY:Delano Girls Varsity vs Roseville HS
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+DESCRIPTION:Game P135\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
+ team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
+ blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
+ vision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b06746
+ 32334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h20260819185241568b52a48b6735948@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20261004T112000
+DTEND;TZID=America/Chicago:20261004T121000
+SUMMARY:Delano Girls Varsity vs White Bear Lake Varsity
+LOCATION:Maple Grove Fernbrook Fields - Turf 3S
+DESCRIPTION:Game P30\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
+ eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
+ lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
+ ision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b067463
+ 2334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:h202608191852448290e5e2ca5768643@gnll-delano
+DTSTAMP:20260910T002901Z
+LAST-MODIFIED:20260910T002901Z
+DTSTART;TZID=America/Chicago:20261004T135000
+DTEND;TZID=America/Chicago:20261004T144000
+SUMMARY:Delano Girls Varsity vs Mounds View HS White
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+DESCRIPTION:Game P79\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
+ eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
+ lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
+ ision=h20260803144549719c27a2e4d033b41&IDTeam=h2026081717584362727b067463
+ 2334d
+URL:https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202
+ 60721133003342b93bed415dde43&IDDivision=h20260803144549719c27a2e4d033b41&
+ IDTeam=h2026081717584362727b0674632334d
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
