@@ -12,6 +12,23 @@ TZ_NAME = "America/Chicago"
 TZ = ZoneInfo(TZ_NAME)
 UTC = ZoneInfo("UTC")
 
+
+# Known venue addresses. The Tourney field/turf designation is preserved,
+# and the street address is appended for better Google Calendar / Maps support.
+VENUE_ADDRESSES = {
+    "Maple Grove Fernbrook Fields": "14401 99th Avenue N, Maple Grove, MN 55369",
+    "Wayzata High School": "4955 Peony Lane N, Plymouth, MN 55446",
+    "McMurray Fields-St. Paul": "1155 Jessamine Ave W, Saint Paul, MN 55108",
+    "St. Paul Central High School": "275 Lexington Parkway N, Saint Paul, MN 55104",
+}
+
+def enrich_location(location):
+    """Append a known street address while preserving Tourney's field name."""
+    for venue_prefix, address in VENUE_ADDRESSES.items():
+        if location.startswith(venue_prefix):
+            return f"{location}, {address}"
+    return location
+
 TEAMS = [
     {
         "source_name": "Delano JV",
@@ -94,7 +111,7 @@ def parse_games(page_html, team):
                 "opponent": opponent,
                 "start": start,
                 "end": end,
-                "location": location,
+                "location": enrich_location(location),
                 "source_url": team_url(team),
                 "slug": team["slug"],
             }
