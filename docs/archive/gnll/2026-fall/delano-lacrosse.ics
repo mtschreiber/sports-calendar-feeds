@@ -9,12 +9,13 @@ X-PUBLISHED-TTL:PT1H
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 BEGIN:VEVENT
 UID:h20260819201338900e81b6522f02f44@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T103000
 DTEND;TZID=America/Chicago:20260913T112000
 SUMMARY:Delano Girls Varsity vs Elk River
-LOCATION:Maple Grove Fernbrook Fields - Turf 1S
+LOCATION:Maple Grove Fernbrook Fields - Turf 1S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P131\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
  blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
@@ -28,12 +29,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819201432662fcac985be57b49@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T130000
 DTEND;TZID=America/Chicago:20260913T135000
 SUMMARY:Delano Girls Varsity vs Mounds View HS White
-LOCATION:Maple Grove Fernbrook Fields - Turf 1N
+LOCATION:Maple Grove Fernbrook Fields - Turf 1N\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P133\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
  blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
@@ -47,12 +49,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608191852464637c72a3d8111842@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T135000
 DTEND;TZID=America/Chicago:20260913T144000
 SUMMARY:Delano Girls JV vs Monticello/Anoka Varsity
-LOCATION:Maple Grove Fernbrook Fields - Turf 1S
+LOCATION:Maple Grove Fernbrook Fields - Turf 1S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P105\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/
  Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivisio
@@ -66,12 +69,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h2026081918524614617066863b21543@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T144000
 DTEND;TZID=America/Chicago:20260913T153000
 SUMMARY:Delano Girls JV vs Rogers Varsity
-LOCATION:Maple Grove Fernbrook Fields - Turf 1N
+LOCATION:Maple Grove Fernbrook Fields - Turf 1N\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P99\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
@@ -84,12 +88,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h2026081821413838228f46d5fbbdb4c@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T150000
 DTEND;TZID=America/Chicago:20260913T155000
 SUMMARY:Delano Boys vs Mounds View JV (8)
-LOCATION:McMurray Fields-St. Paul - Turf Field West
+LOCATION:McMurray Fields-St. Paul - Turf Field West\, 1155 Jessamine Ave 
+ W\, Saint Paul\, MN 55108
 DESCRIPTION:Game P17\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -103,12 +108,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608182141390986287245349db4b@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260913T160000
 DTEND;TZID=America/Chicago:20260913T165000
 SUMMARY:Delano Boys vs CEC JV (6)
-LOCATION:McMurray Fields-St. Paul - Turf Field West
+LOCATION:McMurray Fields-St. Paul - Turf Field West\, 1155 Jessamine Ave 
+ W\, Saint Paul\, MN 55108
 DESCRIPTION:Game P23\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -122,12 +128,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h2026081918524198305ce61b5710446@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T112000
 DTEND;TZID=America/Chicago:20260920T121000
 SUMMARY:Delano Girls JV vs Hutchinson Varsity
-LOCATION:Wayzata High School - Small Turf 3 North
+LOCATION:Wayzata High School - Small Turf 3 North\, 4955 Peony Lane N\, P
+ lymouth\, MN 55446
 DESCRIPTION:Game P37\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
@@ -140,12 +147,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608182141400166bb2f272919d4d@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T120000
 DTEND;TZID=America/Chicago:20260920T125000
 SUMMARY:Delano Boys vs Stearns Select/Rocori JV(6)
-LOCATION:Maple Grove Fernbrook Fields - Turf 3
+LOCATION:Maple Grove Fernbrook Fields - Turf 3\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P35\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -159,12 +167,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608191852459876c241297ae7440@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T121000
 DTEND;TZID=America/Chicago:20260920T130000
 SUMMARY:Delano Girls JV vs Waconia Varsity
-LOCATION:Wayzata High School - Small Turf 3 North
+LOCATION:Wayzata High School - Small Turf 3 North\, 4955 Peony Lane N\, P
+ lymouth\, MN 55446
 DESCRIPTION:Game P96\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
@@ -177,12 +186,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608191852403342958ccd5a92547@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T130000
 DTEND;TZID=America/Chicago:20260920T135000
 SUMMARY:Delano Girls Varsity vs Stillwater Red Stillwater Black
-LOCATION:St. Paul Central High School - Small Turf East
+LOCATION:St. Paul Central High School - Small Turf East\, 275 Lexington P
+ arkway N\, Saint Paul\, MN 55104
 DESCRIPTION:Game P5\n2026 GNLL Boys & Girls Sunday Fall League\nSource te
  am: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -196,12 +206,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h2026081918524326992eed6b35fe840@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T135000
 DTEND;TZID=America/Chicago:20260920T144000
 SUMMARY:Delano Girls Varsity vs Hudson Varsity
-LOCATION:St. Paul Central High School - Small Turf East
+LOCATION:St. Paul Central High School - Small Turf East\, 275 Lexington P
+ arkway N\, Saint Paul\, MN 55104
 DESCRIPTION:Game P56\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
  lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
@@ -215,12 +226,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h2026081821413873809e593d2e52046@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260920T140000
 DTEND;TZID=America/Chicago:20260920T145000
 SUMMARY:Delano Boys vs Storm'n Sabres JV (6)
-LOCATION:Maple Grove Fernbrook Fields - Turf 3
+LOCATION:Maple Grove Fernbrook Fields - Turf 3\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P43\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -234,12 +246,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819185241466df4a916cbf864d@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T130000
 DTEND;TZID=America/Chicago:20260927T135000
 SUMMARY:Delano Girls JV vs Rogers JV
-LOCATION:Maple Grove Fernbrook Fields - Turf 2S
+LOCATION:Maple Grove Fernbrook Fields - Turf 2S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P28\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
@@ -252,12 +265,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819201338900c17585defb8d4b@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T140000
 DTEND;TZID=America/Chicago:20260927T145000
 SUMMARY:Delano Girls Varsity vs Maple Grove Varsity
-LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P130\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
  blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
@@ -271,12 +285,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608202233035120911e1e5bbaf4f@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T145000
 DTEND;TZID=America/Chicago:20260927T154000
 SUMMARY:Delano Girls JV vs Blaine
-LOCATION:Maple Grove Fernbrook Fields - Turf 3S
+LOCATION:Maple Grove Fernbrook Fields - Turf 3S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P154\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/
  Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivisio
@@ -290,12 +305,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819201546005f1c110df105e44@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T154000
 DTEND;TZID=America/Chicago:20260927T163000
 SUMMARY:Delano Girls Varsity vs Roseville HS
-LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P135\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pu
  blic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDi
@@ -309,12 +325,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260818214139960baff69237ef242@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T160000
 DTEND;TZID=America/Chicago:20260927T165000
 SUMMARY:Delano Boys vs CEC JV (6)
-LOCATION:Maple Grove Fernbrook Fields - Turf 1
+LOCATION:Maple Grove Fernbrook Fields - Turf 1\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P81\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -328,12 +345,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260818214139201ccb9ccadf46d4b@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20260927T170000
 DTEND;TZID=America/Chicago:20260927T175000
 SUMMARY:Delano Boys vs Storm'n Sabres JV (6)
-LOCATION:Maple Grove Fernbrook Fields - Turf 1
+LOCATION:Maple Grove Fernbrook Fields - Turf 1\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P83\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -347,12 +365,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819185241568b52a48b6735948@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T112000
 DTEND;TZID=America/Chicago:20261004T121000
 SUMMARY:Delano Girls Varsity vs White Bear Lake Varsity
-LOCATION:Maple Grove Fernbrook Fields - Turf 3S
+LOCATION:Maple Grove Fernbrook Fields - Turf 3S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P30\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
  lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
@@ -366,12 +385,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260818214141117308ee491bf4b48@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T130000
 DTEND;TZID=America/Chicago:20261004T135000
 SUMMARY:Delano Boys vs Buffalo Varsity (8)
-LOCATION:Maple Grove Fernbrook Fields - Turf 1
+LOCATION:Maple Grove Fernbrook Fields - Turf 1\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P97\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Publ
  ic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivi
@@ -385,12 +405,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608191852448290e5e2ca5768643@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T135000
 DTEND;TZID=America/Chicago:20261004T144000
 SUMMARY:Delano Girls Varsity vs Mounds View HS White
-LOCATION:Maple Grove Fernbrook Fields - Turf 3N
+LOCATION:Maple Grove Fernbrook Fields - Turf 3N\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P79\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano Varsity\nSportsEngine Tourney: https://tourneymachine.com/Pub
  lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
@@ -404,12 +425,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819185243164bb27b26a22794e@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T144000
 DTEND;TZID=America/Chicago:20261004T153000
 SUMMARY:Delano Girls JV vs Centennial JV
-LOCATION:Maple Grove Fernbrook Fields - Turf 3S
+LOCATION:Maple Grove Fernbrook Fields - Turf 3S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P54\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
@@ -422,12 +444,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h20260819195408846fc72e03be01945@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T150000
 DTEND;TZID=America/Chicago:20261004T155000
 SUMMARY:Delano Boys vs Champlin Park Varsity (8)
-LOCATION:Maple Grove Fernbrook Fields - Turf 1
+LOCATION:Maple Grove Fernbrook Fields - Turf 1\, 14401 99th Avenue N\, Ma
+ ple Grove\, MN 55369
 DESCRIPTION:Game P105\n2026 GNLL Boys & Girls Sunday Fall League\nSource 
  team: Delano JV (8)\nSportsEngine Tourney: https://tourneymachine.com/Pub
  lic/Results/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDiv
@@ -441,12 +464,13 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:h202608191852407644afe4279b10b4c@gnll-delano
-DTSTAMP:20260910T002901Z
-LAST-MODIFIED:20260910T002901Z
+DTSTAMP:20260910T004259Z
+LAST-MODIFIED:20260910T004259Z
 DTSTART;TZID=America/Chicago:20261004T153000
 DTEND;TZID=America/Chicago:20261004T162000
 SUMMARY:Delano Girls JV vs STMA JV
-LOCATION:Maple Grove Fernbrook Fields - Turf 3S
+LOCATION:Maple Grove Fernbrook Fields - Turf 3S\, 14401 99th Avenue N\, M
+ aple Grove\, MN 55369
 DESCRIPTION:Game P14\n2026 GNLL Boys & Girls Sunday Fall League\nSource t
  eam: Delano JV\nSportsEngine Tourney: https://tourneymachine.com/Public/R
  esults/Team.aspx?IDTournament=h20260721133003342b93bed415dde43&IDDivision
