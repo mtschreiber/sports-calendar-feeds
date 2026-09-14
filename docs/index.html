@@ -3,42 +3,307 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
   <title>Sports Calendar Feeds</title>
   <style>
+    :root {
+      --bg: #080808;
+      --bg-soft: #151515;
+      --card: rgba(24, 24, 24, 0.92);
+      --card-hover: rgba(34, 34, 34, 0.98);
+      --text: #ffffff;
+      --muted: #b8b8b8;
+      --border: rgba(255,255,255,.10);
+      --accent: #f58220;
+      --accent-2: #f58220;
+      --shadow: 0 18px 50px rgba(0,0,0,.28);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.55;
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 130, 32, .22), transparent 32%),
+        radial-gradient(circle at top right, rgba(245, 130, 32, .08), transparent 28%),
+        var(--bg);
     }
-    a {
+
+    .wrap {
+      width: min(980px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .hero {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(245,130,32,.14);
+      color: #ffb36f;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 5px rgba(245,130,32,.12);
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .sub {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -.02em;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feed {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 92px;
+      padding: 18px;
+      color: inherit;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .feed:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245,130,32,.55);
+      background: var(--card-hover);
+    }
+
+    .feed.primary {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(245,130,32,.22), rgba(245,130,32,.07));
+      border-color: rgba(245,130,32,.42);
+    }
+
+    .icon {
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 1.25rem;
+    }
+
+    .feed strong {
       display: block;
-      margin: 12px 0;
-      font-size: 1.08rem;
+      margin-bottom: 3px;
+      font-size: 1.02rem;
     }
-    .note {
-      margin-top: 28px;
-      font-size: 0.95rem;
-      opacity: 0.8;
+
+    .feed small {
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .info {
+      margin-top: 24px;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .info strong { color: var(--text); }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #8f8f8f;
+      font-size: .82rem;
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding-top: 28px; }
+      .hero { padding: 26px 22px; }
+      .grid { grid-template-columns: 1fr; }
+      .feed.primary { grid-column: auto; }
+      .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7f7;
+        --bg-soft: #eeeeee;
+        --card: rgba(255,255,255,.92);
+        --card-hover: #ffffff;
+        --text: #111111;
+        --muted: #606060;
+        --border: rgba(0,0,0,.12);
+        --shadow: 0 18px 50px rgba(0,0,0,.10);
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(245,130,32,.16), transparent 30%),
+          radial-gradient(circle at top right, rgba(245,130,32,.06), transparent 26%),
+          var(--bg);
+      }
+
+      .eyebrow { color: #a94e00; }
     }
   </style>
 </head>
 <body>
-  <h1>Sports Calendar Feeds</h1>
-  <p>Automatically updated calendar feeds generated from tournament schedule data.</p>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> Automatically Updated</div>
+      <h1>Sports Calendar Feeds</h1>
+      <p class="sub">
+        Subscribe to live calendar feeds generated from tournament schedule data.
+        Updates are published automatically as schedules change.
+      </p>
+    </section>
 
-  <h2>GNLL 2026 Fall</h2>
-  <a href="calendars/gnll-2026-fall/delano-lacrosse.ics">All Delano Lacrosse</a>
-  <a href="calendars/gnll-2026-fall/delano-girls-jv.ics">Delano Girls JV</a>
-  <a href="calendars/gnll-2026-fall/delano-girls-varsity.ics">Delano Girls Varsity</a>
-  <a href="calendars/gnll-2026-fall/delano-girls-14u.ics">Delano 14U Girls</a>
-  <a href="calendars/gnll-2026-fall/delano-girls-10u.ics">Delano 10U Girls</a>
-  <a href="calendars/gnll-2026-fall/delano-boys.ics">Delano Boys</a>
+    <section class="section">
+      <div class="section-title">
+        <h2>GNLL 2026 Fall</h2>
+        <span>Delano Lacrosse</span>
+      </div>
 
-  <p class="note">
-    These feeds currently correspond specifically to the 2026 GNLL Boys &amp; Girls Sunday Fall League.
-    Additional tournaments, sports, teams, and seasons can be added as separate calendar groups later.
-  </p>
+      <div class="grid">
+        <a class="feed primary" href="calendars/gnll-2026-fall/delano-lacrosse.ics">
+          <div class="icon">📅</div>
+          <div>
+            <strong>All Delano Lacrosse</strong>
+            <small>Combined calendar for all five Delano teams</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="feed" href="calendars/gnll-2026-fall/delano-girls-jv.ics">
+          <div class="icon">🥍</div>
+          <div>
+            <strong>Delano Girls JV</strong>
+            <small>Individual team calendar</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="feed" href="calendars/gnll-2026-fall/delano-girls-varsity.ics">
+          <div class="icon">🥍</div>
+          <div>
+            <strong>Delano Girls Varsity</strong>
+            <small>Individual team calendar</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="feed" href="calendars/gnll-2026-fall/delano-girls-14u.ics">
+          <div class="icon">🥍</div>
+          <div>
+            <strong>Delano 14U Girls</strong>
+            <small>Individual team calendar</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="feed" href="calendars/gnll-2026-fall/delano-girls-10u.ics">
+          <div class="icon">🥍</div>
+          <div>
+            <strong>Delano 10U Girls</strong>
+            <small>Individual team calendar</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="feed" href="calendars/gnll-2026-fall/delano-boys.ics">
+          <div class="icon">🥍</div>
+          <div>
+            <strong>Delano Boys</strong>
+            <small>Individual team calendar</small>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="info">
+      <strong>How to use these feeds:</strong> click a calendar above to open the
+      iCalendar file, or copy its link and add it as a subscribed calendar in
+      Google Calendar or Apple Calendar. These feeds currently correspond to the
+      2026 GNLL Boys &amp; Girls Sunday Fall League.
+    </div>
+
+    <div class="footer">sports-calendar-feeds • generated from public schedule data</div>
+  </main>
 </body>
 </html>
