@@ -26,9 +26,11 @@ The tournament-specific subscription feeds are published under:
 
 Available feeds:
 
-- `/calendars/gnll-2026-fall/delano-lacrosse.ics` — all three Delano teams
+- `/calendars/gnll-2026-fall/delano-lacrosse.ics` — all five Delano teams
 - `/calendars/gnll-2026-fall/delano-girls-jv.ics`
 - `/calendars/gnll-2026-fall/delano-girls-varsity.ics`
+- `/calendars/gnll-2026-fall/delano-girls-14u.ics`
+- `/calendars/gnll-2026-fall/delano-girls-10u.ics`
 - `/calendars/gnll-2026-fall/delano-boys.ics`
 
 For the GitHub Pages site, the full URLs are:
@@ -36,6 +38,8 @@ For the GitHub Pages site, the full URLs are:
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-lacrosse.ics`
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-jv.ics`
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-varsity.ics`
+- `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-14u.ics`
+- `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-10u.ics`
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-boys.ics`
 
 These URLs can be added to Google Calendar using:
@@ -51,12 +55,16 @@ SportsEngine Tourney currently identifies the teams as:
 - `Delano JV`
 - `Delano Varsity`
 - `Delano JV (8)`
+- `Delano 14U`
+- `Delano 10U`
 
 The published calendars display them as:
 
 - `Delano Girls JV`
 - `Delano Girls Varsity`
 - `Delano Boys`
+- `Delano 14U Girls`
+- `Delano 10U Girls`
 
 Opponent names are preserved as Tourney provides them.
 
