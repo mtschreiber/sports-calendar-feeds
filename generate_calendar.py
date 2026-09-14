@@ -231,12 +231,8 @@ def write_if_changed(path, content):
 
 def main():
     docs = Path("docs")
-    permanent = docs / "calendars"
-    season = permanent / "gnll-2026-fall"
-    archive = docs / "archive" / "gnll" / "2026-fall"
-    permanent.mkdir(parents=True, exist_ok=True)
+    season = docs / "calendars" / "gnll-2026-fall"
     season.mkdir(parents=True, exist_ok=True)
-    archive.mkdir(parents=True, exist_ok=True)
 
     all_games = []
     by_slug = {}
@@ -262,14 +258,8 @@ def main():
 
     changed = False
     for filename, content in feeds.items():
-        # Stable URLs intended for long-term calendar subscriptions.
-        changed |= write_if_changed(permanent / filename, content)
-
-        # Current season-specific URLs.
+        # Each season has one canonical set of calendar feeds.
         changed |= write_if_changed(season / filename, content)
-
-        # Archive copies.
-        changed |= write_if_changed(archive / filename, content)
 
     print(f"Wrote {len(all_games)} total events.")
     print("Calendar files changed." if changed else "No calendar changes.")
