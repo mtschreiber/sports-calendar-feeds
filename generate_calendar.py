@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import hashlib
+import re
 from pathlib import Path
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -51,6 +52,20 @@ TEAMS = [
         "team_id": "h202608141203158731248c7422eb541",
         "slug": "boys",
     },
+    {
+        "source_name": "Delano 14U",
+        "calendar_name": "Delano 14U Girls",
+        "division_id": "h20260803144535519826b420c900644",
+        "team_id": "h20260818203116104d76f633303de4a",
+        "slug": "girls-14u",
+    },
+    {
+        "source_name": "Delano 10U",
+        "calendar_name": "Delano 10U Girls",
+        "division_id": "h20260803144508906e6260d4c92e246",
+        "team_id": "h2026082519104677996c3bdcfaf7a4e",
+        "slug": "girls-10u",
+    },
 ]
 
 HEADERS = {
@@ -80,12 +95,49 @@ def parse_games(page_html, team):
     games = []
 
     for row in soup.select("[data-gameid]"):
-        values = list(row.stripped_strings)
-        if len(values) < 6:
+        cells = row.find_all("td", recursive=False)
+        team_cells = row.select("td[data-teamid]")
+        if len(cells) < 4 or len(team_cells) != 2:
             continue
 
         game_id = row.get("data-gameid")
-        game_no, date_text, time_text, location, team1, team2 = values[:6]
+        game_no = cells[0].get_text(" ", strip=True)
+
+        schedule_text = cells[1].get_text(" ", strip=True)
+        date_match = re.search(r"(?:Sun|Mon|Tue|Wed|Thu|Fri|Sat) \d{2}/\d{2}/\d{2}", schedule_text)
+        time_match = re.search(r"\d{1,2}:\d{2}\s+[AP]M", schedule_text)
+        if not date_match or not time_match:
+            continue
+
+        date_text = date_match.group(0)
+        time_text = time_match.group(0)
+        location = cells[2].get_text(" ", strip=True)
+
+        # Use Tourney's team IDs instead of positional text. This stays reliable
+        # after completed games add score columns between the two team names.
+        team_entries = [
+            {
+                "team_id": cell.get("data-teamid"),
+                "name": cell.get_text(" ", strip=True),
+            }
+            for cell in team_cells
+        ]
+
+        matching_team = next(
+            (entry for entry in team_entries if entry["team_id"] == team["team_id"]),
+            None,
+        )
+        if not matching_team:
+            continue
+
+        opponent_entry = next(
+            (entry for entry in team_entries if entry["team_id"] != team["team_id"]),
+            None,
+        )
+        if not opponent_entry:
+            continue
+
+        opponent = opponent_entry["name"]
 
         start = datetime.strptime(
             f"{date_text} {time_text}", "%a %m/%d/%y %I:%M %p"
@@ -93,14 +145,6 @@ def parse_games(page_html, team):
 
         # GNLL fall schedule uses 50-minute game slots.
         end = start + timedelta(minutes=50)
-
-        if team1 == team["source_name"]:
-            opponent = team2
-        elif team2 == team["source_name"]:
-            opponent = team1
-        else:
-            # Defensive fallback in case Tourney changes text formatting.
-            opponent = team2
 
         games.append(
             {
@@ -212,6 +256,8 @@ def main():
         "delano-girls-jv.ics": make_ics(by_slug["girls-jv"], "Delano Girls JV"),
         "delano-girls-varsity.ics": make_ics(by_slug["girls-varsity"], "Delano Girls Varsity"),
         "delano-boys.ics": make_ics(by_slug["boys"], "Delano Boys"),
+        "delano-girls-14u.ics": make_ics(by_slug["girls-14u"], "Delano 14U Girls"),
+        "delano-girls-10u.ics": make_ics(by_slug["girls-10u"], "Delano 10U Girls"),
     }
 
     changed = False
