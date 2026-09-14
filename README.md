@@ -98,14 +98,11 @@ Google Calendar controls how often it refreshes externally subscribed `.ics` fee
 so a Tourney change may not appear in Google Calendar immediately even after this
 repository has updated.
 
-## Archive
+## Season history
 
-Season-specific copies are also stored under:
-
-`/archive/gnll/2026-fall/`
-
-This makes it possible to retain historical calendar files while adding future
-tournaments and seasons.
+Each season has one canonical calendar folder under `/calendars/`. Older season
+folders remain in place when new seasons are added, so the season folders themselves
+serve as the historical archive without creating duplicate `.ics` files.
 
 ## Future expansion
 
@@ -138,4 +135,6 @@ Then run:
 
     python generate_calendar.py
 
-Generated calendar files are written under the `docs` directory.
+Generated calendar files for this season are written under:
+
+`docs/calendars/gnll-2026-fall/`
