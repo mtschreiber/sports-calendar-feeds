@@ -47,7 +47,7 @@ TEAMS = [
     },
     {
         "source_name": "Delano JV (8)",
-        "calendar_name": "Delano Boys",
+        "calendar_name": "Delano Boys JV",
         "division_id": "h202607272226364483dfe2bb6a5944c",
         "team_id": "h202608141203158731248c7422eb541",
         "slug": "boys",
@@ -251,7 +251,7 @@ def main():
         "delano-lacrosse.ics": make_ics(all_games, "Delano Lacrosse"),
         "delano-girls-jv.ics": make_ics(by_slug["girls-jv"], "Delano Girls JV"),
         "delano-girls-varsity.ics": make_ics(by_slug["girls-varsity"], "Delano Girls Varsity"),
-        "delano-boys.ics": make_ics(by_slug["boys"], "Delano Boys"),
+        "delano-boys-jv.ics": make_ics(by_slug["boys"], "Delano Boys JV"),
         "delano-girls-14u.ics": make_ics(by_slug["girls-14u"], "Delano 14U Girls"),
         "delano-girls-10u.ics": make_ics(by_slug["girls-10u"], "Delano 10U Girls"),
     }
