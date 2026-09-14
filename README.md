@@ -31,7 +31,7 @@ Available feeds:
 - `/calendars/gnll-2026-fall/delano-girls-varsity.ics`
 - `/calendars/gnll-2026-fall/delano-girls-14u.ics`
 - `/calendars/gnll-2026-fall/delano-girls-10u.ics`
-- `/calendars/gnll-2026-fall/delano-boys.ics`
+- `/calendars/gnll-2026-fall/delano-boys-jv.ics`
 
 For the GitHub Pages site, the full URLs are:
 
@@ -40,7 +40,7 @@ For the GitHub Pages site, the full URLs are:
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-varsity.ics`
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-14u.ics`
 - `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-girls-10u.ics`
-- `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-boys.ics`
+- `https://mtschreiber.github.io/sports-calendar-feeds/calendars/gnll-2026-fall/delano-boys-jv.ics`
 
 These URLs can be added to Google Calendar using:
 
@@ -62,7 +62,7 @@ The published calendars display them as:
 
 - `Delano Girls JV`
 - `Delano Girls Varsity`
-- `Delano Boys`
+- `Delano Boys JV`
 - `Delano 14U Girls`
 - `Delano 10U Girls`
 
