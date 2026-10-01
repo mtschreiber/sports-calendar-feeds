@@ -85,15 +85,51 @@
     }
 
     .section {
-      margin-top: 30px;
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
+      overflow: hidden;
     }
+
+    .section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 22px;
+      user-select: none;
+      transition: background .18s ease;
+    }
+
+    .section summary::-webkit-details-marker { display: none; }
+    .section summary:hover { background: rgba(255,255,255,.035); }
+
+    .section[open] summary {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-content { padding: 18px; }
+
+    .chevron {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(255,255,255,.06);
+      color: var(--accent);
+      font-size: 1.15rem;
+      transition: transform .18s ease;
+    }
+
+    .section[open] .chevron { transform: rotate(180deg); }
 
     .section-title {
       display: flex;
       justify-content: space-between;
       align-items: end;
       gap: 16px;
-      margin-bottom: 14px;
+      margin-bottom: 0;
     }
 
     .section-title h2 {
@@ -233,12 +269,18 @@
       </p>
     </section>
 
-    <section class="section">
-      <div class="section-title">
-        <h2>GNLL 2026 Fall</h2>
-        <span>Delano Lacrosse</span>
-      </div>
+    <details class="section">
+      <summary>
+        <div class="section-title">
+          <div>
+            <h2>GNLL 2026 Fall</h2>
+            <span>Delano Lacrosse</span>
+          </div>
+          <div class="chevron">⌄</div>
+        </div>
+      </summary>
 
+      <div class="section-content">
       <div class="grid">
         <a class="feed primary" href="calendars/gnll-2026-fall/delano-lacrosse.ics">
           <div class="icon">📅</div>
@@ -294,14 +336,21 @@
           <div class="arrow">→</div>
         </a>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <h2>GNLL 2026 Great Pumpkin Shootout</h2>
-        <span>Oct 10-11 • Delano Lacrosse</span>
       </div>
+    </details>
 
+    <details class="section">
+      <summary>
+        <div class="section-title">
+          <div>
+            <h2>GNLL 2026 Great Pumpkin Shootout</h2>
+            <span>Oct 10-11 • Delano Lacrosse</span>
+          </div>
+          <div class="chevron">⌄</div>
+        </div>
+      </summary>
+
+      <div class="section-content">
       <div class="grid">
         <a class="feed primary" href="calendars/gnll-2026-great-pumpkin/delano-lacrosse.ics">
           <div class="icon">🎃</div>
@@ -317,7 +366,8 @@
         <a class="feed" href="calendars/gnll-2026-great-pumpkin/delano-girls-14u.ics"><div class="icon">🥍</div><div><strong>Delano Girls 14U</strong><small>Individual team calendar</small></div><div class="arrow">→</div></a>
         <a class="feed" href="calendars/gnll-2026-great-pumpkin/delano-girls-jv.ics"><div class="icon">🥍</div><div><strong>Delano Girls JV</strong><small>Individual team calendar</small></div><div class="arrow">→</div></a>
       </div>
-    </section>
+      </div>
+    </details>
 
     <div class="info">
       <strong>How to use these feeds:</strong> Click a calendar above to open the
