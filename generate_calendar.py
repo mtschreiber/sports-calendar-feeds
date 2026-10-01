@@ -8,7 +8,6 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 
-TOURNAMENT_ID = "h20260721133003342b93bed415dde43"
 TZ_NAME = "America/Chicago"
 TZ = ZoneInfo(TZ_NAME)
 UTC = ZoneInfo("UTC")
@@ -21,6 +20,8 @@ VENUE_ADDRESSES = {
     "Wayzata High School": "4955 Peony Lane N, Plymouth, MN 55446",
     "McMurray Fields-St. Paul": "1155 Jessamine Ave W, Saint Paul, MN 55108",
     "St. Paul Central High School": "275 Lexington Parkway N, Saint Paul, MN 55104",
+    "Shakopee High School Complex": "100 17th Ave W, Shakopee, MN 55379",
+    "Shakopee Saber Fields": "13200 Townline Ave, Shakopee, MN 55379",
 }
 
 def enrich_location(location):
@@ -30,13 +31,21 @@ def enrich_location(location):
             return f"{location}, {address}"
     return location
 
-TEAMS = [
+COLLECTIONS = [
+    {
+        "slug": "gnll-2026-fall",
+        "name": "2026 GNLL Boys & Girls Sunday Fall League",
+        "tournament_id": "h20260721133003342b93bed415dde43",
+        "combined_name": "Delano Lacrosse",
+        "combined_filename": "delano-lacrosse.ics",
+        "teams": [
     {
         "source_name": "Delano JV",
         "calendar_name": "Delano Girls JV",
         "division_id": "h20260803144549719c27a2e4d033b41",
         "team_id": "h202608171758345139f98f800eebc40",
         "slug": "girls-jv",
+        "filename": "delano-girls-jv.ics",
     },
     {
         "source_name": "Delano Varsity",
@@ -44,6 +53,7 @@ TEAMS = [
         "division_id": "h20260803144549719c27a2e4d033b41",
         "team_id": "h2026081717584362727b0674632334d",
         "slug": "girls-varsity",
+        "filename": "delano-girls-varsity.ics",
     },
     {
         "source_name": "Delano JV (8)",
@@ -51,6 +61,7 @@ TEAMS = [
         "division_id": "h202607272226364483dfe2bb6a5944c",
         "team_id": "h202608141203158731248c7422eb541",
         "slug": "boys",
+        "filename": "delano-boys-jv.ics",
     },
     {
         "source_name": "Delano 14U",
@@ -58,6 +69,7 @@ TEAMS = [
         "division_id": "h20260803144535519826b420c900644",
         "team_id": "h20260818203116104d76f633303de4a",
         "slug": "girls-14u",
+        "filename": "delano-girls-14u.ics",
     },
     {
         "source_name": "Delano 10U",
@@ -65,6 +77,22 @@ TEAMS = [
         "division_id": "h20260803144508906e6260d4c92e246",
         "team_id": "h2026082519104677996c3bdcfaf7a4e",
         "slug": "girls-10u",
+        "filename": "delano-girls-10u.ics",
+    },
+],
+    },
+    {
+        "slug": "gnll-2026-great-pumpkin",
+        "name": "2026 GNLL Great Pumpkin Shootout Oct 10-11",
+        "tournament_id": "h2026090316330547179569339d06e44",
+        "combined_name": "Delano Great Pumpkin Shootout",
+        "combined_filename": "delano-lacrosse.ics",
+        "teams": [
+            {"source_name": "Delano (Done by 12PM Sat)", "calendar_name": "Delano Boys JV", "division_id": "h20260911142026012c221cb74488746", "team_id": "h20260912195324581bf429a9d8d4342", "slug": "boys-jv", "filename": "delano-boys-jv.ics"},
+            {"source_name": "Delano", "calendar_name": "Delano Girls 10U", "division_id": "h2026090316554219753204183e6254a", "team_id": "h20260915134604387edf20afc7d4049", "slug": "girls-10u", "filename": "delano-girls-10u.ics"},
+            {"source_name": "Delano", "calendar_name": "Delano Girls 14U", "division_id": "h2026090316562514247301647b5d943", "team_id": "h20260916012241086c6483758404146", "slug": "girls-14u", "filename": "delano-girls-14u.ics"},
+            {"source_name": "Delano", "calendar_name": "Delano Girls JV", "division_id": "h2026091220312668217ae36665c5943", "team_id": "h202609122031403867c9e4262d85144", "slug": "girls-jv", "filename": "delano-girls-jv.ics"},
+        ],
     },
 ]
 
@@ -77,20 +105,20 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml",
 }
 
-def team_url(team):
+def team_url(collection, team):
     return (
         "https://tourneymachine.com/Public/Results/Team.aspx"
-        f"?IDTournament={TOURNAMENT_ID}"
+        f"?IDTournament={collection['tournament_id']}"
         f"&IDDivision={team['division_id']}"
         f"&IDTeam={team['team_id']}"
     )
 
-def get_html(team):
-    r = requests.get(team_url(team), headers=HEADERS, timeout=30)
+def get_html(collection, team):
+    r = requests.get(team_url(collection, team), headers=HEADERS, timeout=30)
     r.raise_for_status()
     return r.text
 
-def parse_games(page_html, team):
+def parse_games(page_html, collection, team):
     soup = BeautifulSoup(page_html, "html.parser")
     games = []
 
@@ -156,8 +184,9 @@ def parse_games(page_html, team):
                 "start": start,
                 "end": end,
                 "location": enrich_location(location),
-                "source_url": team_url(team),
+                "source_url": team_url(collection, team),
                 "slug": team["slug"],
+                "collection_name": collection["name"],
             }
         )
 
@@ -194,7 +223,7 @@ def make_ics(games, calendar_name):
     for g in sorted(games, key=lambda x: x["start"]):
         description = (
             f"Game {g['game_no']}\n"
-            "2026 GNLL Boys & Girls Sunday Fall League\n"
+            f"{g['collection_name']}\n"
             f"Source team: {g['source_name']}\n"
             f"SportsEngine Tourney: {g['source_url']}"
         )
@@ -229,39 +258,41 @@ def write_if_changed(path, content):
     path.write_text(content, encoding="utf-8", newline="")
     return True
 
-def main():
-    docs = Path("docs")
-    season = docs / "calendars" / "gnll-2026-fall"
+def generate_collection(collection, docs):
+    season = docs / "calendars" / collection["slug"]
     season.mkdir(parents=True, exist_ok=True)
 
     all_games = []
     by_slug = {}
 
-    for team in TEAMS:
-        print(f"Downloading {team['source_name']}...")
-        page = get_html(team)
-        games = parse_games(page, team)
+    for team in collection["teams"]:
+        print(f"[{collection['slug']}] Downloading {team['calendar_name']}...")
+        page = get_html(collection, team)
+        games = parse_games(page, collection, team)
         if not games:
-            raise RuntimeError(f"No games found for {team['source_name']}")
-        print(f"{team['source_name']}: {len(games)} games")
+            raise RuntimeError(f"No games found for {team['calendar_name']} in {collection['name']}")
+        print(f"[{collection['slug']}] {team['calendar_name']}: {len(games)} games")
         all_games.extend(games)
         by_slug[team["slug"]] = games
 
     feeds = {
-        "delano-lacrosse.ics": make_ics(all_games, "Delano Lacrosse"),
-        "delano-girls-jv.ics": make_ics(by_slug["girls-jv"], "Delano Girls JV"),
-        "delano-girls-varsity.ics": make_ics(by_slug["girls-varsity"], "Delano Girls Varsity"),
-        "delano-boys-jv.ics": make_ics(by_slug["boys"], "Delano Boys JV"),
-        "delano-girls-14u.ics": make_ics(by_slug["girls-14u"], "Delano 14U Girls"),
-        "delano-girls-10u.ics": make_ics(by_slug["girls-10u"], "Delano 10U Girls"),
+        collection["combined_filename"]: make_ics(all_games, collection["combined_name"]),
     }
+    for team in collection["teams"]:
+        feeds[team["filename"]] = make_ics(by_slug[team["slug"]], team["calendar_name"])
 
     changed = False
     for filename, content in feeds.items():
-        # Each season has one canonical set of calendar feeds.
         changed |= write_if_changed(season / filename, content)
 
-    print(f"Wrote {len(all_games)} total events.")
+    print(f"[{collection['slug']}] Wrote {len(all_games)} total events.")
+    return changed
+
+def main():
+    docs = Path("docs")
+    changed = False
+    for collection in COLLECTIONS:
+        changed |= generate_collection(collection, docs)
     print("Calendar files changed." if changed else "No calendar changes.")
 
 if __name__ == "__main__":
