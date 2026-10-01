@@ -206,8 +206,32 @@ def fold(line, limit=73):
     # Current schedule data is ASCII, so character folding is sufficient here.
     return "\r\n ".join(line[i:i + limit] for i in range(0, len(line), limit))
 
-def make_ics(games, calendar_name):
-    stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+def parse_previous_events(content):
+    """Return prior VEVENT properties keyed by UID."""
+    if not content:
+        return {}
+
+    # RFC 5545 continuation lines begin with a space or tab.
+    unfolded = re.sub(r"\r?\n[ \t]", "", content)
+    previous = {}
+
+    for block in re.findall(r"BEGIN:VEVENT\r?\n(.*?)\r?\nEND:VEVENT", unfolded, re.S):
+        props = {}
+        for line in block.splitlines():
+            if ":" not in line:
+                continue
+            name, value = line.split(":", 1)
+            props[name] = value
+
+        uid = props.get("UID")
+        if uid:
+            previous[uid] = props
+
+    return previous
+
+def make_ics(games, calendar_name, previous_content=None):
+    now_stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+    previous = parse_previous_events(previous_content)
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
@@ -228,21 +252,41 @@ def make_ics(games, calendar_name):
             f"SportsEngine Tourney: {g['source_url']}"
         )
         summary = f"{g['calendar_name']} vs {g['opponent']}"
+        uid = f"{g['game_id']}@gnll-delano"
+
+        event_props = [
+            (f"DTSTART;TZID={TZ_NAME}", g["start"].strftime("%Y%m%dT%H%M%S")),
+            (f"DTEND;TZID={TZ_NAME}", g["end"].strftime("%Y%m%dT%H%M%S")),
+            ("SUMMARY", esc(summary)),
+            ("LOCATION", esc(g["location"])),
+            ("DESCRIPTION", esc(description)),
+            ("URL", g["source_url"]),
+            ("STATUS", "CONFIRMED"),
+            ("TRANSP", "OPAQUE"),
+        ]
+
+        prior = previous.get(uid)
+        unchanged = prior is not None and all(
+            prior.get(name) == value for name, value in event_props
+        )
+
+        if unchanged:
+            sequence = int(prior.get("SEQUENCE", "0"))
+            modified_stamp = prior.get("LAST-MODIFIED") or prior.get("DTSTAMP") or now_stamp
+            dtstamp = prior.get("DTSTAMP") or modified_stamp
+        else:
+            sequence = int(prior.get("SEQUENCE", "0")) + 1 if prior else 0
+            modified_stamp = now_stamp
+            dtstamp = now_stamp
 
         lines.extend(
             [
                 "BEGIN:VEVENT",
-                f"UID:{g['game_id']}@gnll-delano",
-                f"DTSTAMP:{stamp}",
-                f"LAST-MODIFIED:{stamp}",
-                f"DTSTART;TZID={TZ_NAME}:{g['start'].strftime('%Y%m%dT%H%M%S')}",
-                f"DTEND;TZID={TZ_NAME}:{g['end'].strftime('%Y%m%dT%H%M%S')}",
-                f"SUMMARY:{esc(summary)}",
-                f"LOCATION:{esc(g['location'])}",
-                f"DESCRIPTION:{esc(description)}",
-                f"URL:{g['source_url']}",
-                "STATUS:CONFIRMED",
-                "TRANSP:OPAQUE",
+                f"UID:{uid}",
+                f"DTSTAMP:{dtstamp}",
+                f"LAST-MODIFIED:{modified_stamp}",
+                f"SEQUENCE:{sequence}",
+                *[f"{name}:{value}" for name, value in event_props],
                 "END:VEVENT",
             ]
         )
@@ -252,7 +296,7 @@ def make_ics(games, calendar_name):
 
 def write_if_changed(path, content):
     path = Path(path)
-    old = path.read_text(encoding="utf-8") if path.exists() else None
+    old = path.read_bytes().decode("utf-8") if path.exists() else None
     if old == content:
         return False
     path.write_text(content, encoding="utf-8", newline="")
@@ -275,11 +319,23 @@ def generate_collection(collection, docs):
         all_games.extend(games)
         by_slug[team["slug"]] = games
 
+    combined_path = season / collection["combined_filename"]
+    combined_previous = (
+        combined_path.read_text(encoding="utf-8") if combined_path.exists() else None
+    )
     feeds = {
-        collection["combined_filename"]: make_ics(all_games, collection["combined_name"]),
+        collection["combined_filename"]: make_ics(
+            all_games, collection["combined_name"], combined_previous
+        ),
     }
     for team in collection["teams"]:
-        feeds[team["filename"]] = make_ics(by_slug[team["slug"]], team["calendar_name"])
+        team_path = season / team["filename"]
+        team_previous = (
+            team_path.read_text(encoding="utf-8") if team_path.exists() else None
+        )
+        feeds[team["filename"]] = make_ics(
+            by_slug[team["slug"]], team["calendar_name"], team_previous
+        )
 
     changed = False
     for filename, content in feeds.items():
