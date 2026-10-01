@@ -5,9 +5,10 @@ iCalendar (`.ics`) format.
 
 ## Current scope
 
-The project is currently configured specifically for the:
+The project is currently configured for multiple GNLL events, including:
 
-**2026 GNLL Boys & Girls Sunday Fall League**
+- **2026 GNLL Boys & Girls Sunday Fall League**
+- **2026 GNLL Great Pumpkin Shootout Oct 10-11**
 
 The current data source is **SportsEngine Tourney / Tourney Machine**. The generator
 reads the live public schedule pages for the configured Delano teams, normalizes the
@@ -47,6 +48,23 @@ These URLs can be added to Google Calendar using:
 **Other calendars -> + -> From URL**
 
 They can also be used as subscribed calendars in Apple Calendar.
+
+
+### 2026 GNLL Great Pumpkin Shootout
+
+Published under:
+
+`/calendars/gnll-2026-great-pumpkin/`
+
+Available feeds:
+
+- `/calendars/gnll-2026-great-pumpkin/delano-lacrosse.ics` — all four Delano teams
+- `/calendars/gnll-2026-great-pumpkin/delano-boys-jv.ics` — Delano Boys JV
+- `/calendars/gnll-2026-great-pumpkin/delano-girls-10u.ics` — Delano Girls 10U
+- `/calendars/gnll-2026-great-pumpkin/delano-girls-14u.ics` — Delano Girls 14U
+- `/calendars/gnll-2026-great-pumpkin/delano-girls-jv.ics` — Delano Girls JV
+
+SportsEngine's source labels are retained internally for matching, while published calendar names use the clearer Delano team names above.
 
 ## Team display names
 
@@ -135,6 +153,7 @@ Then run:
 
     python generate_calendar.py
 
-Generated calendar files for this season are written under:
+Generated calendar files are written under each event's folder in `docs/calendars/`, including:
 
-`docs/calendars/gnll-2026-fall/`
+- `docs/calendars/gnll-2026-fall/`
+- `docs/calendars/gnll-2026-great-pumpkin/`
