@@ -296,7 +296,7 @@ def make_ics(games, calendar_name, previous_content=None):
 
 def write_if_changed(path, content):
     path = Path(path)
-    old = path.read_text(encoding="utf-8") if path.exists() else None
+    old = path.read_bytes().decode("utf-8") if path.exists() else None
     if old == content:
         return False
     path.write_text(content, encoding="utf-8", newline="")
